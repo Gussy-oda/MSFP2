@@ -37,17 +37,7 @@ La asignatura de Modelado de Sistemas Fisiológicos forma parte del plan de estu
 
 En esta práctica se modela el sistema cardiovascular mediante el modelo Windkessel, una analogía eléctrica de la circulación arterial. La resistencia vascular representa la oposición al flujo sanguíneo y la distensibilidad arterial representa la capacidad de las arterias para almacenar volumen, de forma análoga a un capacitor. La presión arterial se obtiene a partir del balance entre el flujo de entrada del corazón, el flujo de salida hacia la circulación periférica y el almacenamiento de volumen en el compartimento arterial.
 
-La diferencia principal respecto a la práctica anterior es que la dinámica del sistema se formula directamente mediante ecuaciones diferenciales ordinarias (EDO), en lugar de partir únicamente de un circuito RLC y su función de transferencia. Para el modelo Windkessel de dos elementos, la ecuación de balance es
-
-\[
-C\frac{dP(t)}{dt}=Q_{in}(t)-\frac{P(t)}{R},
-\]
-
-donde \(P(t)\) es la presión arterial, \(Q_{in}(t)\) es el flujo sanguíneo de entrada, \(R\) es la resistencia vascular periférica y \(C\) es la distensibilidad arterial. Al despejar la derivada se obtiene la EDO en forma explícita:
-
-\[
-\frac{dP(t)}{dt}=\frac{1}{C}\left(Q_{in}(t)-\frac{P(t)}{R}\right).
-\]
+La diferencia principal respecto a la práctica anterior es que la dinámica del sistema se formula directamente mediante ecuaciones diferenciales ordinarias (EDO), en lugar de partir únicamente de un circuito RLC y su función de transferencia.
 
 Esta ecuación permite calcular la evolución temporal de la presión a partir de una condición inicial y de una entrada de flujo. La constante de tiempo del sistema es \(\tau=RC\), por lo que un aumento de la resistencia o de la distensibilidad hace más lenta la respuesta. Para el modelo Windkessel de tres elementos puede incorporarse una resistencia característica \(R_c\), con \(P_a(t)=R_cQ_{in}(t)+P_c(t)\) y \(C\,dP_c(t)/dt=Q_{in}(t)-P_c(t)/R\). La función de transferencia se utiliza como representación equivalente para el análisis de control, mientras que la EDO conserva de manera explícita la variable de estado y facilita la simulación de entradas fisiológicas variables.
 
